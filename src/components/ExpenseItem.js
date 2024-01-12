@@ -1,19 +1,14 @@
 import "./ExpenseItem.css";
 
-function ExpenseItem() {
-    
-    const eName="Petrol";
-    const eDate = new Date(2024,1,12);
-    const eAmout = 100;
-    const eLocation = "kollam"
-
+function ExpenseItem(props) {
+  
   return (
     <div className="expense-item">
-      <div>{eDate.toISOString()}</div>
+      <div>{props.date.toISOString()}</div>
       <div className="expense-item__description">
-        <h2>{eName}</h2>
-        <h3>{eLocation}</h3>
-        <div className="expense-item__price">{eAmout}</div>
+        <h2>{props.title}</h2>
+        <h3>{props.location}</h3>
+        <div className="expense-item__price">{props.amount}</div>
       </div>
     </div>
   );
