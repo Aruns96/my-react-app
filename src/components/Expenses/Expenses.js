@@ -4,9 +4,23 @@ import "./Expenses.css";
 import React from "react";
 
 const Expenses = (props) => {
+  // const rows =[];
+  // for(let i=0;i<props.items.length;i++){
+  //   rows.push(<ExpenseItem title={props.items[i].title} amount={props.items[i].amount} date={props.items[i].date} />)
+  // }
+  //console.log(rows)
   return (
     <Card className="expenses">
-      <ExpenseItem
+   
+      {props.items.map((expense) => (
+        <ExpenseItem
+          title={expense.title}
+          amount={expense.amount}
+          
+          date={expense.date}
+        />
+      ))}
+      {/* <ExpenseItem
         title={props.items[0].title}
         amount={props.items[0].amount}
         date={props.items[0].date}
@@ -23,7 +37,7 @@ const Expenses = (props) => {
         amount={props.items[2].amount}
         date={props.items[2].date}
         location={props.items[2].location}
-      />
+      /> */}
     </Card>
   );
 }
